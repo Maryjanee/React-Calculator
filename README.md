@@ -3,6 +3,7 @@
 > A simple calculator built with React.js
 
 ## Live Link
+   [Try it live here](https://react-js-calculator-app.herokuapp.com)
 
 
 ## Built With
