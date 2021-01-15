@@ -1,4 +1,5 @@
 import Button from './Button';
+import '../styles/ButtonPanel.css';
 
 const ButtonPanel = () => (
   <div className="btn-panel">
@@ -14,7 +15,7 @@ const ButtonPanel = () => (
     <div className="btn-group">
       {['1', '2', '3', '+'].map(((btnVal, index) => <Button key={(btnVal + index).toString()} buttonName={btnVal} />))}
     </div>
-    <div className="btn-group">
+    <div className="btn-group last">
       {['0', '.', '='].map(((btnVal, index) => <Button key={(btnVal + index).toString()} buttonName={btnVal} />))}
     </div>
   </div>

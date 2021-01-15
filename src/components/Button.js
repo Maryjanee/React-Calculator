@@ -1,4 +1,5 @@
 import PropTypes from 'prop-types';
+import '../styles/Button.css';
 
 const Button = ({ buttonName }) => (
   <button type="button">{buttonName}</button>
