@@ -1,0 +1,10 @@
+.display-container {
+  background: #858693;
+  padding: 1.5rem 2rem;
+}
+
+.display-value {
+  text-align: right;
+  font-size: 2.5rem;
+  color: #fff;
+}
