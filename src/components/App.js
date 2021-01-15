@@ -1,12 +1,12 @@
 import React from 'react';
+import ButtonPanel from './ButtonPanel';
 import Display from './Display';
 
-function App() {
-  return (
-    <div className="App">
-      <Display />
-    </div>
-  );
-}
+const App = () => (
+  <>
+    <Display />
+    <ButtonPanel />
+  </>
+);
 
 export default App;
