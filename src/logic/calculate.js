@@ -1,7 +1,9 @@
 import operate from './operate';
 
 const calculate = (obj, buttonName) => {
-  const calcData = { obj };
+  const calcData = { ...obj };
+  const {total, next} = obj;
+  
   if (buttonName === '+/-') {
     calcData.total *= -1;
     calcData.next *= -1;
@@ -9,12 +11,12 @@ const calculate = (obj, buttonName) => {
     calcData.total = null;
     calcData.next = null;
   } else if (buttonName === '=') {
-    if (calcData.total && calcData.next) {
-      calcData.total = operate(calcData.total, calcData.next, buttonName);
+    if (total && next) {
+      calcData.total = operate(total, next, buttonName);
     }
   } else if (buttonName === '+' || buttonName === '-' || buttonName === 'x' || buttonName === '÷') {
-    calcData.total = operate(calcData.total, calcData.next, buttonName);
+    calcData.total = operate(total, next, buttonName);
   }
-  return obj;
+  return calcData;
 };
 export default calculate;
