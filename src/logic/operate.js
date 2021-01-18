@@ -5,18 +5,18 @@ const operate = (numberOne, numberTwo, operation) => {
   let firstNum = Big(numberOne);
   let secondNum = Big(numberTwo)
   if (operation === '+') {
-    total = Big(firstNum + secondNum);
+    total = firstNum.plus(secondNum);
   } else if (operation === '-') {
-    total = Big(firstNum - secondNum);
+    total = firstNum.minus(secondNum)
   } else if (operation === '/') {
-    total = Big(firstNum / secondNum);
+    total = firstNum.div(secondNum) ;
   } else if (operation === '*') {
-    total = Big(firstNum * secondNum);
+    total = firstNum.times(secondNum)
   } else if (operation === '%') {
     if (secondNum) {
-      total = Big((firstNum * 0.01) * secondNum);
+      total = (firstNum.times(0.01)) * secondNum;
     } else {
-      total = Big(firstNum * 0.01);
+      total = firstNum.times(0.01);
     }
   } else {
     total = '';
