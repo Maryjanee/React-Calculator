@@ -1,3 +1,4 @@
+/* eslint-disable no-sequences */
 import React from 'react';
 import ButtonPanel from './ButtonPanel';
 import Display from './Display';
@@ -18,10 +19,10 @@ class App extends React.Component {
   }
 
   render() {
-    const { total } = this.state;
+    const { total, next, operation } = this.state;
     return (
       <div className="calculator">
-        <Display result={total} />
+        <Display result={total, next, operation} />
         <ButtonPanel onClick={this.handleClick} />
       </div>
     );
