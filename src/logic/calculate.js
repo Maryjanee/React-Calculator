@@ -16,6 +16,10 @@ const calculate = (obj, buttonName) => {
     }
   } else if (buttonName === '+' || buttonName === '-' || buttonName === 'x' || buttonName === '÷') {
     calcData.total = operate(total, next, buttonName);
+  }else if(buttonName ==='.'){
+    if(!total.includes('.')){
+     total += '.' 
+    }
   }
   return calcData;
 };

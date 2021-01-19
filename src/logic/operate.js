@@ -3,7 +3,8 @@ import Big from 'big.js';
 const operate = (numberOne, numberTwo, operation) => {
   let total;
   let firstNum = Big(numberOne);
-  let secondNum = Big(numberTwo)
+  let secondNum = Big(numberTwo);
+  
   if (operation === '+') {
     total = firstNum.plus(secondNum);
   } else if (operation === '-') {
