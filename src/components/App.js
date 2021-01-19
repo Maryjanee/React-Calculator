@@ -3,11 +3,15 @@ import ButtonPanel from './ButtonPanel';
 import Display from './Display';
 import '../styles/App.css';
 
-const App = () => (
-  <div className="calculator">
-    <Display />
-    <ButtonPanel />
-  </div>
-);
+class App extends React.Component {
+  render() {
+    return (
+      <div className="calculator">
+        <Display />
+        <ButtonPanel />
+      </div>
+    );
+  }
+}
 
 export default App;
