@@ -2,17 +2,17 @@ import Big from 'big.js';
 
 const operate = (numberOne, numberTwo, operation) => {
   let total;
-  let firstNum = Big(numberOne);
-  let secondNum = Big(numberTwo);
-  
+  const firstNum = Big(numberOne);
+  const secondNum = Big(numberTwo);
+
   if (operation === '+') {
     total = firstNum.plus(secondNum);
   } else if (operation === '-') {
-    total = firstNum.minus(secondNum)
+    total = firstNum.minus(secondNum);
   } else if (operation === '/') {
-    total = firstNum.div(secondNum) ;
+    total = firstNum.div(secondNum);
   } else if (operation === '*') {
-    total = firstNum.times(secondNum)
+    total = firstNum.times(secondNum);
   } else if (operation === '%') {
     if (secondNum) {
       total = (firstNum.times(0.01)) * secondNum;
