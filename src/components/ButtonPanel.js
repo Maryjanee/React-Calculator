@@ -1,7 +1,7 @@
 import Button from './Button';
 import '../styles/ButtonPanel.css';
 
-const ButtonPanel = () => (
+const ButtonPanel = (props) => (
   <div className="btn-panel">
     <div className="btn-group">
       {['AC', '+/-', '%', '÷'].map(((btnVal, index) => <Button key={(btnVal + index).toString()} buttonName={btnVal} />))}
