@@ -1,0 +1,12 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.calculator {
+  width: 700px;
+  height: auto;
+  margin: 50px auto;
+  border: 1px solid #bababa;
+}
