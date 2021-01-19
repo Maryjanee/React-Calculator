@@ -28,7 +28,7 @@ To get a local copy up and running follow these simple example steps.
 
 👤 **Maryjane Akpagbue**
 
-- Github: [@m15e](https://github.com/Maryjanee)
+- Github: [Maryjane Akpagbue](https://github.com/Maryjanee)
 
 
 ## Show your support
