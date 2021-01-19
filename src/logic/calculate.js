@@ -14,7 +14,7 @@ const calculate = (obj, buttonName) => {
     if (total && next) {
       calcData.total = operate(total, next, buttonName);
     }
-  } else if (buttonName === '+' || buttonName === '-' || buttonName === 'x' || buttonName === '÷') {
+  } else if (buttonName === '+' || buttonName === '-' || buttonName === '*' || buttonName === '/') {
     calcData.total = operate(total, next, buttonName);
   } else if (buttonName === '.') {
     if (!total.includes('.')) {

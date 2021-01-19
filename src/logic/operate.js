@@ -9,13 +9,13 @@ const operate = (numberOne, numberTwo, operation) => {
     total = firstNum.plus(secondNum);
   } else if (operation === '-') {
     total = firstNum.minus(secondNum);
-  } else if (operation === '/') {
+  } else if (operation === '÷') {
     total = firstNum.div(secondNum);
   } else if (operation === '*') {
     total = firstNum.times(secondNum);
   } else if (operation === '%') {
     if (secondNum) {
-      total = (firstNum.times(0.01)) * secondNum;
+      total = (firstNum.times(0.01)).times(secondNum);
     } else {
       total = firstNum.times(0.01);
     }
