@@ -68,10 +68,17 @@ const calculate = (calculatorData, buttonName) => {
       break;
     case /[=]/.test(buttonName):
       if (operation !== null) {
-        total = operate(total, next, operation);
-        next = null;
-        operation = null;
+        try {
+          total = operate(total, next, operation);
+          next = null;
+          operation = null;
+        } catch (e) {
+          total = null;
+          next = null;
+          operation = null;
+        }
       }
+
       break;
     default:
       total = '';
