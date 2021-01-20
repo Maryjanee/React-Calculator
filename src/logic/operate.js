@@ -16,7 +16,11 @@ const operate = (numberOne, numberTwo, operator) => {
       result = firstNum.times(secondNum).toString();
       break;
     case '÷':
-      result = firstNum.div(secondNum).toString();
+      try {
+        result = firstNum.div(secondNum).toString();
+      } catch (e) {
+        result = 'zero division not permitted';
+      }
       break;
     case '%':
       if (secondNum) {
