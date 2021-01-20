@@ -1,11 +1,17 @@
 import PropTypes from 'prop-types';
 import '../styles/Button.css';
 
-const Button = ({ buttonName, onClick }) => (
-  <button type="button" onClick={() => onClick(buttonName)}>
-    {buttonName}
-  </button>
-);
+const Button = ({ buttonName, onClick }) => {
+  const handleClick = () => {
+    onClick(buttonName);
+  };
+
+  return (
+    <button type="button" onClick={handleClick}>
+      {buttonName}
+    </button>
+  );
+};
 
 Button.defaultProps = {
   buttonName: 'btn',

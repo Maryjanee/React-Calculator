@@ -24,9 +24,6 @@ const calculate = (calculatorData, buttonName) => {
       }
       break;
     case /[+|\-|*]/.test(buttonName):
-      // if (next === 0) {
-      //   total = 'Zero division not allowed';
-      // } else
       if (total === null) {
         total = 0;
       }

@@ -10,25 +10,31 @@ const Panel = ({ onClick, symbols }) => symbols.map((symbol, index) => (
   />
 ));
 
-const ButtonPanel = ({ onClick }) => (
-  <div className="btn-panel">
-    <div className="btn-group">
-      <Panel onClick={onClick} symbols={['AC', '+/-', '%', '÷']} />
+const ButtonPanel = props => {
+  const handleClick = buttonName => {
+    props.onClick(buttonName);
+  };
+
+  return (
+    <div className="btn-panel">
+      <div className="btn-group">
+        <Panel onClick={handleClick} symbols={['AC', '+/-', '%', '÷']} />
+      </div>
+      <div className="btn-group">
+        <Panel onClick={handleClick} symbols={['7', '8', '9', '*']} />
+      </div>
+      <div className="btn-group">
+        <Panel onClick={handleClick} symbols={['4', '5', '6', '-']} />
+      </div>
+      <div className="btn-group">
+        <Panel onClick={handleClick} symbols={['1', '2', '3', '+']} />
+      </div>
+      <div className="btn-group last">
+        <Panel onClick={handleClick} symbols={['0', '.', '=']} />
+      </div>
     </div>
-    <div className="btn-group">
-      <Panel onClick={onClick} symbols={['7', '8', '9', '*']} />
-    </div>
-    <div className="btn-group">
-      <Panel onClick={onClick} symbols={['4', '5', '6', '-']} />
-    </div>
-    <div className="btn-group">
-      <Panel onClick={onClick} symbols={['1', '2', '3', '+']} />
-    </div>
-    <div className="btn-group last">
-      <Panel onClick={onClick} symbols={['0', '.', '=']} />
-    </div>
-  </div>
-);
+  );
+};
 
 ButtonPanel.propTypes = {
   onClick: PropTypes.func,
