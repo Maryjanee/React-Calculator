@@ -29,9 +29,6 @@ const operate = (numberOne, numberTwo, operator) => {
         result = firstNum.times(0.01).toString();
       }
       break;
-      // case '+/-':
-      //   result = firstNum.times(-1).toString();
-      //   break;
 
     default:
       result = '';
