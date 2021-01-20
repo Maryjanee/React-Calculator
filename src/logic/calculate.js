@@ -30,12 +30,10 @@ const calculate = (calculatorData, buttonName) => {
       operation = buttonName;
       break;
     case /[÷]/.test(buttonName):
-      if (next === 0) {
-        total = 'Zero division not allowed';
-      }
       if (total === null) {
         total = 0;
       }
+      console.log(total, next, buttonName, operation);
       operation = buttonName;
       break;
     case /\d/.test(buttonName):
@@ -43,6 +41,8 @@ const calculate = (calculatorData, buttonName) => {
         if (total === null) {
           total = buttonName;
         } else if (typeof total === 'number') {
+          total = buttonName;
+        } else if (total === 'zero division not permitted') {
           total = buttonName;
         } else {
           total += buttonName;
