@@ -1,26 +1,92 @@
 import operate from './operate';
 
-const calculate = (obj, buttonName) => {
-  const calcData = { ...obj };
-  const { total, next } = obj;
+const calculate = (calculatorData, buttonName) => {
+  let { total, next, operation } = calculatorData;
 
-  if (buttonName === '+/-') {
-    calcData.total *= -1;
-    calcData.next *= -1;
-  } else if (buttonName === 'AC') {
-    calcData.total = null;
-    calcData.next = null;
-  } else if (buttonName === '=') {
-    if (total && next) {
-      calcData.total = operate(total, next, buttonName);
-    }
-  } else if (buttonName === '+' || buttonName === '-' || buttonName === '*' || buttonName === '/') {
-    calcData.total = operate(total, next, buttonName);
-  } else if (buttonName === '.') {
-    if (!total.includes('.')) {
-      calcData.total += '.';
-    }
+  switch (true) {
+    case /[AC]/.test(buttonName):
+      total = null;
+      next = null;
+      operation = null;
+      break;
+    case /[^+][-$]/.test(buttonName):
+      if (next === null) {
+        total *= -1;
+      } else {
+        next *= -1;
+      }
+      break;
+    case /[%]/.test(buttonName):
+      if (next === null) {
+        total /= 100;
+      } else {
+        next /= 100;
+      }
+      break;
+    case /[+|\-|*]/.test(buttonName):
+      if (total === null) {
+        total = 0;
+      }
+      operation = buttonName;
+      break;
+    case /[÷]/.test(buttonName):
+      if (total === null) {
+        total = 0;
+      }
+      console.log(total, next, buttonName, operation);
+      operation = buttonName;
+      break;
+    case /\d/.test(buttonName):
+      if (operation === null) {
+        if (total === null) {
+          total = buttonName;
+        } else if (typeof total === 'number') {
+          total = buttonName;
+        } else if (total === 'zero division not permitted') {
+          total = buttonName;
+        } else {
+          total += buttonName;
+        }
+      } else if (next === null) {
+        next = buttonName;
+      } else {
+        next += buttonName;
+      }
+      break;
+    case /[.]/.test(buttonName):
+      if (operation === null) {
+        if (total === null) {
+          total = 0 + buttonName;
+        } else if (!/[.]/.test(total)) {
+          total += buttonName;
+        }
+      } else if (next === null) {
+        next = 0 + buttonName;
+      } else if (!/[.]/.test(next)) {
+        next += buttonName;
+      }
+      break;
+    case /[=]/.test(buttonName):
+      if (operation !== null) {
+        try {
+          total = operate(total, next, operation);
+          next = null;
+          operation = null;
+        } catch (e) {
+          total = null;
+          next = null;
+          operation = null;
+        }
+      }
+
+      break;
+    default:
+      total = '';
+      next = null;
+      operation = null;
+      break;
   }
-  return calcData;
+  return { total, next, operation };
 };
+
 export default calculate;
