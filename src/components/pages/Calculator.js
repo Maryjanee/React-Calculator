@@ -1,10 +1,11 @@
+/* eslint-disable import/extensions */
 import React, { useState } from 'react';
-import ButtonPanel from './ButtonPanel';
-import Display from './Display';
-import '../styles/App.css';
-import calculate from '../logic/calculate';
+import ButtonPanel from '../ButtonPanel';
+import Display from '../Display';
+import '../../styles/App.css';
+import calculate from '../../logic/calculate';
 
-const App = () => {
+const Calculator = () => {
   const [state, setState] = useState({ total: null, next: null, operation: null });
 
   const handleClick = buttonName => {
@@ -21,4 +22,4 @@ const App = () => {
   );
 };
 
-export default App;
+export default Calculator;
