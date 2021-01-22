@@ -15,6 +15,7 @@ const Calculator = () => {
 
   const { total, next } = state;
   return (
+
     <div className="calculator">
       <Display result={next || total || 0} />
       <ButtonPanel onClick={handleClick} />

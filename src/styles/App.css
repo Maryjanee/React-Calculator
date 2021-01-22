@@ -4,9 +4,31 @@
   box-sizing: border-box;
 }
 
+.d-flex {
+  display: flex;
+}
+
+.space-btw {
+  justify-content: space-between;
+}
+
+.align-center {
+  align-items: center;
+}
+
 .calculator {
   width: 700px;
   height: auto;
   margin: 50px auto;
   border: 1px solid #bababa;
+}
+
+.container {
+  width: 87%;
+  margin: 2rem auto;
+}
+
+p {
+  font-size: 1.3rem;
+  margin: 2rem 0;
 }

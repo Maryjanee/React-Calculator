@@ -1,24 +1,18 @@
-import React, { useState } from 'react';
-import ButtonPanel from './ButtonPanel';
-import Display from './Display';
-import '../styles/App.css';
-import calculate from '../logic/calculate';
+import { BrowserRouter, Route } from 'react-router-dom';
+import NavBar from './NavBar';
+import Calculator from './pages/Calculator';
+import Home from './pages/Home';
+import Quote from './pages/Quote';
 
-const App = () => {
-  const [state, setState] = useState({ total: null, next: null, operation: null });
-
-  const handleClick = buttonName => {
-    const { total, next, operation } = state;
-    setState(calculate({ total, next, operation }, buttonName));
-  };
-
-  const { total, next } = state;
-  return (
-    <div className="calculator">
-      <Display result={next || total || 0} />
-      <ButtonPanel onClick={handleClick} />
-    </div>
-  );
-};
+const App = () => (
+  <BrowserRouter>
+    <>
+      <NavBar />
+      <Route exact path="/" component={Home} />
+      <Route path="/calculator" component={Calculator} />
+      <Route path="/quote" component={Quote} />
+    </>
+  </BrowserRouter>
+);
 
 export default App;
