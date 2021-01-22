@@ -2,8 +2,8 @@
 const Home = () => (
   <div className="container">
     <h1>Welcome to Our Page</h1>
-    <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Qui accusantium earum voluptatum expedita dolor voluptate consequuntur sed saepe perferendis. Reiciendis ratione quod corporis quasi molestiae magni, vel obcaecati voluptas hic?</p>
-    <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Qui accusantium earum voluptatum expedita dolor voluptate consequuntur sed saepe perferendis. Reiciendis ratione quod corporis quasi molestiae magni, vel obcaecati voluptas hic?</p>
+    <p>Warm greetings from the creators of the Math Magicians Application</p>
+    <p>We are thrilled to have you stop by an do some work here. Thank you for your time.</p>
   </div>
 );
 
