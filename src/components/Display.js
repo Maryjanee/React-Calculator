@@ -3,7 +3,7 @@ import '../styles/Display.css';
 
 const Display = ({ result }) => (
   <div className="display-container">
-    <p className="display-value">{result}</p>
+    <p className="display-value">{result ? String(result) : null}</p>
   </div>
 );
 

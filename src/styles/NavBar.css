@@ -1,0 +1,29 @@
+nav {
+  background: #7b68ee;
+}
+
+a {
+  text-decoration: none;
+}
+
+.logo {
+  font-size: 2.5rem;
+  font-weight: 500;
+}
+
+li {
+  list-style: none;
+}
+
+.nav-links {
+  color: #fff;
+  padding: 0 1.5rem;
+  font-weight: 500;
+  font-size: 1.3rem;
+}
+
+.navbar {
+  width: 90%;
+  margin: 0 auto;
+  padding: 1rem 1.5rem;
+}

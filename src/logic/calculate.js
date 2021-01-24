@@ -33,7 +33,6 @@ const calculate = (calculatorData, buttonName) => {
       if (total === null) {
         total = 0;
       }
-      console.log(total, next, buttonName, operation);
       operation = buttonName;
       break;
     case /\d/.test(buttonName):
